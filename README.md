@@ -11,11 +11,14 @@ Implements (mostly) the same API interface on `window.analytics` as [Analytics.j
 In config.xml, you can put the following preferences:
 * \<preference name="analytics_write_key" value="{Segment write key}" />
 * \<preference name="analytics_debug_write_key" value="{Segment write key}" />
+* \<preference name="analytics_use_location_services" value="{boolean}" />
+* \<preference name="analytics_track_application_lifecycle_events" value="{boolean}" />
 
 ##iOS Integrations Setup
 Use CocoaPods:
 The default plugin configuration does not bundle any Segment integrations or core analytics SDKs.
 To add more your custom integrations, create a `Podfile` file in your iOS platform root directory and add your segment integration dependencies. See the [iOS Quickstart][] for examples.
+The minimum required version of the Analytics Pod is `3.1`.
 
 ##Android Integrations Setup
 Use Gradle:
