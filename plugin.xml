@@ -63,7 +63,7 @@
             <preference name="analytics_write_key"/>
             <preference name="analytics_debug_write_key"/>
             <preference name="analytics_use_location_services"/>
-            <preference name="analytics_track_application_lifecycle"/>
+            <preference name="analytics_track_application_lifecycle_events"/>
         </config-file>
 
         <header-file src="src/ios/AnalyticsPlugin.h" />
