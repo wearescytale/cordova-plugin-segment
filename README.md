@@ -13,6 +13,7 @@ In config.xml, you can put the following preferences:
 * \<preference name="analytics_debug_write_key" value="{Segment write key}" />
 * \<preference name="analytics_use_location_services" value="{boolean}" />
 * \<preference name="analytics_track_application_lifecycle_events" value="{boolean}" />
+* \<preference name="analytics_flush_at" value="{integer}" />
 
 ##iOS Integrations Setup
 Use CocoaPods:

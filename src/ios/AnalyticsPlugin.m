@@ -35,12 +35,19 @@
 
         NSString* trackApplicationLifecycleEvents = self.commandDelegate.settings[@"analytics_track_application_lifecycle_events"] ?:
             [[NSBundle mainBundle] objectForInfoDictionaryKey:@"AnalyticsTrackApplicationLifecycleEvents"];
-
+        
+        NSUInteger flushAt = (NSUInteger)[self.commandDelegate.settings[@"analytics_flush_at"] ?:
+            [[NSBundle mainBundle] objectForInfoDictionaryKey:@"AnalyticsFlushAt"] integerValue];
+        
         SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:writeKey];
 
         configuration.shouldUseLocationServices = [useLocationServices boolValue];
         configuration.trackApplicationLifecycleEvents = [trackApplicationLifecycleEvents boolValue];
-
+        
+        if (flushAt > 0) {
+            configuration.flushAt = flushAt;
+        }
+        
         [SEGAnalytics setupWithConfiguration:configuration];
     } else {
         NSLog(@"[cordova-plugin-segment] ERROR - Invalid write key");
